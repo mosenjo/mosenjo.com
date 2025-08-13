@@ -278,6 +278,39 @@
                 max-height: 300px;
             }
         }
+      .lang-toggle {
+  background-color: rgba(0, 194, 255, 0.05); /* very light Lisy blue tint */
+  border-bottom: 1px solid #00C2FF;          /* thin Lisy blue divider */
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.lang-toggle a {
+  text-decoration: none;
+  color: #00C2FF;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease;
+}
+
+.lang-toggle a:hover {
+  border-bottom-color: #00C2FF;
+}
+
+.lang-toggle .current {
+  pointer-events: none;
+  opacity: 0.6;
+  border-bottom-color: transparent;
+}
+
+.lang-toggle span {
+  opacity: 0.5;
+  user-select: none;
+  margin: 0 0.5rem;
+}
     </style>
 </head>
 
