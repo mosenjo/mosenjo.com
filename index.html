@@ -278,50 +278,102 @@
                 max-height: 300px;
             }
         }
-      .lang-toggle {
-  background-color: rgba(0, 194, 255, 0.05); /* very light Lisy blue tint */
-  border-bottom: 1px solid #00C2FF;          /* thin Lisy blue divider */
-  padding: 0.5rem 1rem;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
+      
+      /* Header */
+.site-header {
+  position: sticky;          /* stays visible when scrolling */
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+  backdrop-filter: saturate(120%) blur(2px);
 }
 
-.lang-toggle a {
+.header-inner {
+  max-width: 800px;          /* matches your content width */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6rem 0;          /* vertical rhythm, no side padding since body already has */
+}
+
+/* Left chip */
+.lang-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
   text-decoration: none;
+  font-size: .95rem;
+  line-height: 1;
   color: #00C2FF;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 1px;
-  transition: border-color 0.2s ease;
+  padding: .4rem .6rem;
+  border: 1px solid rgba(0, 194, 255, .35);
+  border-radius: 999px;      /* pill */
+  background: rgba(0, 194, 255, .06);
+  transition: border-color .2s ease, background-color .2s ease;
+}
+.lang-chip:hover {
+  border-color: #00C2FF;
+  background: rgba(0, 194, 255, .1);
 }
 
-.lang-toggle a:hover {
+/* Right nav */
+.top-nav {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  font-size: .98rem;
+}
+.top-nav a {
+  text-decoration: none;
+  color: #666;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color .2s ease, border-color .2s ease;
+}
+.top-nav a:hover {
+  color: #00C2FF;
   border-bottom-color: #00C2FF;
 }
 
-.lang-toggle .current {
-  pointer-events: none;
-  opacity: 0.6;
-  border-bottom-color: transparent;
-}
-
-.lang-toggle span {
-  opacity: 0.5;
-  user-select: none;
-  margin: 0 0.5rem;
+/* Mobile tweaks */
+@media (max-width: 520px) {
+  .header-inner {
+    padding: .5rem 0;
+    gap: .75rem;
+  }
+  .top-nav {
+    gap: .8rem;
+    font-size: .95rem;
+  }
+  .lang-chip {
+    font-size: .9rem;
+    padding: .3rem .5rem;
+  }
 }
     </style>
 </head>
 
 <body>
-    <div class="container">
-      <nav class="lang-toggle" aria-label="Language">
-  <a href="/" lang="en" hreflang="en" class="current">English 🇬🇧</a>
-  <span aria-hidden="true">·</span>
-  <a href="/fr/" lang="fr" hreflang="fr">Français 🇫🇷</a>
-      </nav>
+  <header class="site-header" role="banner">
+  <div class="header-inner">
+    <!-- Left: language chip (shows the other language) -->
+    <a class="lang-chip" href="/fr/" lang="fr" hreflang="fr" aria-label="Voir la version française">
+      FR 🇫🇷
+    </a>
 
+    <!-- Right: navigation -->
+    <nav class="top-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="https://blog.mosenjo.com" target="_blank" rel="noopener">Blog</a>
+      <a href="https://atlas.lisy.app" target="_blank" rel="noopener">Lisy Atlas</a>
+      <a href="https://1817.lisy.app" target="_blank" rel="noopener">1817</a>
+    </nav>
+  </div>
+</header>
+    <div class="container">
+      
         <p>👋 I'm Mose Njo—but these days, I mostly speak on behalf of someone named <a href="https://lisy.app">Lisy</a>. She started as a story. Now she's about to start a universe.</p>
 
         <hr>
@@ -330,17 +382,17 @@
 
         <div class="carousel-container">
             <div class="carousel-track">
-                <img src="images/carousel/IMG_6731.jpeg" alt="Speaking engagement" class="carousel-image">
-                <img src="images/carousel/IMG_6732.png" alt="Speaking engagement" class="carousel-image">
-                <img src="images/carousel/IMG_6734.png" alt="Speaking engagement" class="carousel-image">
-                <img src="images/carousel/IMG_6735.png" alt="Speaking engagement" class="carousel-image">
-                <img src="images/carousel/IMG_6736.jpeg" alt="Speaking engagement" class="carousel-image">
-                <img src="images/carousel/IMG_6737.png" alt="Speaking engagement" class="carousel-image">
-                <img src="images/carousel/IMG_6738.jpeg" alt="Speaking engagement" class="carousel-image">
-                <img src="images/carousel/IMG_6739.jpeg" alt="Speaking engagement" class="carousel-image">
-                <img src="images/carousel/IMG_6740.png" alt="Speaking engagement" class="carousel-image">
-                <img src="images/carousel/IMG_6741.jpeg" alt="Speaking engagement" class="carousel-image">
-                <img src="images/carousel/IMG_6742.png" alt="Speaking engagement" class="carousel-image">
+                <img src="/images/carousel/IMG_6731.jpeg" alt="Speaking engagement" class="carousel-image">
+                <img src="/images/carousel/IMG_6732.png" alt="Speaking engagement" class="carousel-image">
+                <img src="/images/carousel/IMG_6734.png" alt="Speaking engagement" class="carousel-image">
+                <img src="/images/carousel/IMG_6735.png" alt="Speaking engagement" class="carousel-image">
+                <img src="/images/carousel/IMG_6736.jpeg" alt="Speaking engagement" class="carousel-image">
+                <img src="/images/carousel/IMG_6737.png" alt="Speaking engagement" class="carousel-image">
+                <img src="/images/carousel/IMG_6738.jpeg" alt="Speaking engagement" class="carousel-image">
+                <img src="/images/carousel/IMG_6739.jpeg" alt="Speaking engagement" class="carousel-image">
+                <img src="/images/carousel/IMG_6740.png" alt="Speaking engagement" class="carousel-image">
+                <img src="/images/carousel/IMG_6741.jpeg" alt="Speaking engagement" class="carousel-image">
+                <img src="/images/carousel/IMG_6742.png" alt="Speaking engagement" class="carousel-image">
             </div>
             <button class="carousel-btn prev-btn">‹</button>
             <button class="carousel-btn next-btn">›</button>
@@ -352,11 +404,11 @@
 
         <p>I once represented Madagascar as a writer at the Francophonie Games in Abidjan.</p>
         <p>It was the same year Mohamed Mbougar Sarr was there. He won the Goncourt. I won some hearts and got sunburned.</p>
-        <img src="images/IMG_6733.png" alt="Mose Njo, Jeux de la Francophonie à Abidjan" class="main-image">
+        <img src="/images/IMG_6733.png" alt="Mose Njo, Jeux de la Francophonie à Abidjan" class="main-image">
 
         <p>I was awarded a scholarship to study at AoTR, the film school in Berlin.</p>
         <p>I went. I learned. I wrote odd things.</p>
-        <img src="images/IMG_6743.jpeg" alt="Mose Njo, boursier à Art on the Run Film School Berlin" class="main-image">
+        <img src="/images/IMG_6743.jpeg" alt="Mose Njo, boursier à Art on the Run Film School Berlin" class="main-image">
 
         <hr>
 
